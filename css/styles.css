@@ -1,11 +1,26 @@
+/* body */
+
 body {
   background-color: #f0f0f0;
 }
 
-/* body */
-
 header {
   background: #562b81;
+  color: white;
+}
+
+.entry-tab {
+  color: white;
+  padding: 1rem 1.8rem 0.5rem;
+  cursor: pointer;
+  font-family: "Proza Libre", sans-serif;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
   color: white;
 }
 
@@ -17,7 +32,7 @@ header {
 .main-header {
   font-size: 20px;
   position: relative;
-  left: 10px;
+  left: 5px;
 }
 
 .new-entry-header {

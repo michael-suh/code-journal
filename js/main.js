@@ -10,6 +10,7 @@ function updateImg(event) {
 $photoURL.addEventListener('input', updateImg);
 
 var $form = document.querySelector('form');
+var $ulElement = document.querySelector('ul');
 
 function updateEntry(event) {
   event.preventDefault();

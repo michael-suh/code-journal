@@ -18,9 +18,16 @@
 <body>
   <header>
     <div class="container">
-      <nav class="row headers column-full header-position">
-        <h1 class="headers main-header headings">Code Journal</h1>
-      </nav>
+      <div class="column-full headers header-position">
+        <div class="row">
+          <h1 class="headers main-header headings" data-view="entry-form">
+            Code Journal
+          </h1>
+          <div class="tab entry-tab" data-view="entries">
+            <a href="#">Entries</a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -53,6 +60,19 @@
       </form>
     </div>
   </main>
+
+  <div id="view-entries-page" class="view entries hidden" data-view="entries">
+    <div class="container">
+      <div class="row">
+        <h1 class="entries-text">Entries</h1>
+        <button class="button new-button float-right" type="submit">NEW</button>
+      </div>
+      <div class="entry-list">
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
