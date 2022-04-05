@@ -16,44 +16,43 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="center">
-
-    <header class="headers">
-      <nav class="container row headers full-width header-position">
+  <header>
+    <div class="container">
+      <nav class="row headers column-full header-position">
         <h1 class="headers main-header headings">Code Journal</h1>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="container full-width">
-      <div class="entry-form-page" data-view="entry-form">
-        <form class="row center">
-          <h1 class="new-entry-header column-full headings">New Entry</h1>
+  <main class="container">
+    <div class="entry-form-page" data-view="entry-form">
+      <form class="row center">
+        <h1 class="new-entry-header column-full headings">New Entry</h1>
 
-          <div class="column-half image-container">
-            <img class="preview" id="image" src="images/placeholder-image-square.jpg" alt="placeholder-image">
+        <div class="column-half image-container">
+          <img class="preview" id="image" src="images/placeholder-image-square.jpg" alt="placeholder-image">
+        </div>
+        <div class="column-half">
+          <div class="row">
+            <label class="headings" for="title">Title</label>
+            <input class="text-input title" type="text" required="required">
           </div>
-          <div class="column-half">
-            <div class="row">
-              <label class="full-width headings" for="title">Title</label>
-              <input class="full-width text-input title" type="text" required="required">
-            </div>
-            <div class="row">
-              <label class="full-width headings" for="photourl">Photo URL</label>
-              <input class="full-width text-input photourl" type="url" required="required">
-            </div>
+          <div class="row">
+            <label class="headings" for="photourl">Photo URL</label>
+            <input class="text-input photourl" type="url" required="required">
           </div>
+        </div>
 
-          <div class="column-full row">
-            <label class="full-width headings" for="notes">Notes</label>
-            <textarea class="full-width text-input notes" name="notes" id="notes" required="required"></textarea>
-          </div>
-          <div class="column-full">
-            <button class="button save-button float-right" type="submit">SAVE</button>
-          </div>
-        </form>
-      </div>
-    </main>
-  </div>
+        <div class="column-full">
+          <label class="headings" for="notes">Notes</label>
+          <textarea class="text-input notes" name="notes" id="notes" required="required"></textarea>
+        </div>
+        <div class="column-full">
+          <button class="button save-button float-right" type="submit">SAVE</button>
+        </div>
+      </form>
+    </div>
+  </main>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

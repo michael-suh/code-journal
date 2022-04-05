@@ -13,7 +13,12 @@ var $form = document.querySelector('form');
 
 function updateEntry(event) {
   event.preventDefault();
-  var entriesObj = {};
+  var entriesObj = {
+    title: $form.elements.title.value,
+    photourl: $form.elements.photourl.value,
+    notes: $form.elements.notes.value,
+    entryId: data.nextEntryId
+  };
   data.nextEntryId++;
   data.entries.unshift(entriesObj);
   $preview.setAttribute('src', 'images/placeholder-image-square.jpg');
