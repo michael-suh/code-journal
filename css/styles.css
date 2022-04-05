@@ -16,6 +16,8 @@
 
 .main-header {
   font-size: 20px;
+  position: relative;
+  left: 10px;
 }
 
 .new-entry-header {

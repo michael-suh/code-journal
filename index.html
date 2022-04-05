@@ -30,16 +30,16 @@
           <h1 class="new-entry-header column-full headings">New Entry</h1>
 
           <div class="column-half image-container">
-            <img class="preview" src="images/placeholder-image-square.jpg" alt="placeholder-image">
+            <img class="preview" id="image" src="images/placeholder-image-square.jpg" alt="placeholder-image">
           </div>
           <div class="column-half">
             <div class="row">
-              <label class="full-width headings" for="Title">Title</label>
+              <label class="full-width headings" for="title">Title</label>
               <input class="full-width text-input title" type="text" required="required">
             </div>
             <div class="row">
-              <label class="full-width headings" for="Photo-URL">Photo URL</label>
-              <input class="full-width text-input photo-url" type="url" required="required">
+              <label class="full-width headings" for="photourl">Photo URL</label>
+              <input class="full-width text-input photourl" type="url" required="required">
             </div>
           </div>
 
@@ -48,7 +48,7 @@
             <textarea class="full-width text-input notes" name="notes" id="notes" required="required"></textarea>
           </div>
           <div class="column-full">
-            <button class="button save-button float-right">SAVE</button>
+            <button class="button save-button float-right" type="submit">SAVE</button>
           </div>
         </form>
       </div>
