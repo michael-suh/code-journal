@@ -13,7 +13,7 @@ function updateEntry(event) {
     title: $form.elements.title.value,
     photourl: $form.elements.photourl.value,
     notes: $form.elements.notes.value,
-    nextEntryId: data.nextEntryId
+    entryId: data.nextEntryId
   };
   data.nextEntryId++;
   data.entries.unshift(entryObj);
@@ -72,27 +72,21 @@ var $entries = document.querySelector('.entries');
 var $formTab = document.querySelector('.form-tab');
 
 $newbutton.addEventListener('click', function (event) {
-  if ($entryForm !== '') {
-    $entries.className = 'entries hidden';
-    $entryForm.className = 'entry-form';
-    data.view = 'entry-form';
-  }
+  $entries.className = 'entries hidden';
+  $entryForm.className = 'entry-form';
+  data.view = 'entry-form';
 });
 
 $entryTab.addEventListener('click', function (event) {
-  if ($entries !== '') {
-    $entryForm.className = 'entry-form hidden';
-    $entries.className = 'entries';
-    data.view = 'entries';
-  }
+  $entryForm.className = 'entry-form hidden';
+  $entries.className = 'entries';
+  data.view = 'entries';
 });
 
 $formTab.addEventListener('click', function (event) {
-  if ($entryForm !== '') {
-    $entries.className = 'entries hidden';
-    $entryForm.className = 'entry-form';
-    data.view = 'entry-form';
-  }
+  $entries.className = 'entries hidden';
+  $entryForm.className = 'entry-form';
+  data.view = 'entry-form';
 });
 
 // refresh page
