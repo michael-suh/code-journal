@@ -29,27 +29,26 @@ function updateEntry(event) {
 
 $form.addEventListener('submit', updateEntry);
 
-function createEntryListItem(data) {
+function createEntryListItem(entryObj) {
 
   var liElement = document.createElement('li');
   liElement.setAttribute('class', 'row');
+  liElement.setAttribute('data-entry-id', entryObj.entryId);
 
   var imageElement = document.createElement('img');
   imageElement.setAttribute('class', 'column-half');
-  imageElement.setAttribute('src', data.photourl);
-
+  imageElement.setAttribute('src', entryObj.photourl);
   liElement.appendChild(imageElement);
 
   var divElement = document.createElement('div');
   divElement.setAttribute('class', 'column-half');
-
   liElement.appendChild(divElement);
 
   var h1Element = document.createElement('h1');
-  h1Element.textContent = data.title;
+  h1Element.textContent = entryObj.title;
 
   var pElement = document.createElement('p');
-  pElement.textContent = data.notes;
+  pElement.textContent = entryObj.notes;
 
   divElement.appendChild(h1Element);
   divElement.appendChild(pElement);
@@ -85,8 +84,6 @@ $entryTab.addEventListener('click', function (event) {
     $entryForm.className = 'entry-form hidden';
     $entries.className = 'entries';
     data.view = 'entries';
-  } else {
-    return 'No entries have been recorded';
   }
 });
 
@@ -98,7 +95,7 @@ $formTab.addEventListener('click', function (event) {
   }
 });
 
-// to refresh page
+// refresh page
 
 if (data.view === 'entry-form') {
   $entries.className = 'view entries hidden';
