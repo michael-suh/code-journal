@@ -80,7 +80,6 @@ textarea {
 .save-button {
   position: relative;
   left: 90%;
-  margin-top: 10px;
 }
 
 .button {
@@ -136,4 +135,73 @@ a {
 
 .edit-icon {
   color: purple;
+}
+
+.visibility {
+  visibility: visible;
+}
+
+.delete-button {
+  border-style: none;
+  color: red;
+  font-size: 4mm;
+  position: relative;
+  top: 25px;
+  border-bottom: 1px solid red;
+  padding: 0;
+}
+
+.modal-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 100%;
+  visibility: hidden;
+  transform: scale(1.1);
+}
+
+.modal-content {
+  transform: translate(-50%, -50%);
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  width: 27rem;
+  text-align: center;
+  padding: 60px 30px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.show-modal {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cancel-button {
+  width: 90px;
+  height: 35px;
+  position: relative;
+  right: 100px;
+  top: 40px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
+}
+
+.confirm-button {
+  width: 95px;
+  height: 35px;
+  position: relative;
+  left: 100px;
+  top: 40px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.confirmation {
+  font-size: 4.5mm;
 }
