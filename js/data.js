@@ -8,7 +8,6 @@ var data = {
 };
 
 var previousData = localStorage.getItem('code-journal');
-
 if (previousData !== null) {
   data = JSON.parse(previousData);
 }
