@@ -11,7 +11,7 @@ var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $ul = document.querySelector('ul');
 var $newButton = document.querySelector('.new-button');
-var entriesAnchor = document.querySelector('.entry-tab');
+var $entriesAnchor = document.querySelector('.entry-tab');
 
 $photoUrl.addEventListener('input', function (event) {
   $image.setAttribute('src', event.target.value);
@@ -59,9 +59,9 @@ $entryForm.addEventListener('submit', function (event) {
 });
 
 // view entries
-function createEntryListItem(entry) {
+function createEntryListItem(newEntry) {
   var entryList = document.createElement('li');
-  entryList.setAttribute('data-entry-id', entry.entryId);
+  entryList.setAttribute('data-entry-id', newEntry.entryId);
   $ul.appendChild(entryList);
 
   var row = document.createElement('div');
@@ -73,7 +73,7 @@ function createEntryListItem(entry) {
   row.appendChild(columnHalf);
 
   var img = document.createElement('img');
-  img.setAttribute('src', entry.photoUrl);
+  img.setAttribute('src', newEntry.photoUrl);
   img.className = 'img-entries';
   columnHalf.appendChild(img);
 
@@ -83,7 +83,7 @@ function createEntryListItem(entry) {
 
   var titles = document.createElement('h2');
   titles.className = 'entries-title row space-between';
-  titles.textContent = entry.title;
+  titles.textContent = newEntry.title;
   entriesText.appendChild(titles);
 
   var editIcon = document.createElement('i');
@@ -93,7 +93,7 @@ function createEntryListItem(entry) {
   titles.appendChild(editIcon);
 
   var entriesNotes = document.createElement('p');
-  entriesNotes.textContent = entry.notes;
+  entriesNotes.textContent = newEntry.notes;
   entriesText.appendChild(entriesNotes);
 
   return entryList;
@@ -151,6 +151,6 @@ $newButton.addEventListener('click', function (event) {
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
 });
 
-entriesAnchor.addEventListener('click', function (event) {
+$entriesAnchor.addEventListener('click', function (event) {
   swapViews('entries');
 });
