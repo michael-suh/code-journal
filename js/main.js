@@ -12,6 +12,10 @@ var $notes = document.querySelector('#notes');
 var $ul = document.querySelector('ul');
 var $newButton = document.querySelector('.new-button');
 var $entriesAnchor = document.querySelector('.entry-tab');
+var $modalPopUp = document.querySelector('.modal-popup');
+var $deleteButton = document.querySelector('button[type="button"]');
+var $confirmButton = document.querySelector('.confirm-button');
+var $cancelButton = document.querySelector('.cancel-button');
 
 $photoUrl.addEventListener('input', function (event) {
   $image.setAttribute('src', event.target.value);
@@ -127,7 +131,7 @@ function swapViews(string) {
 
 // edit entries
 $entryView.addEventListener('click', function (event) {
-  if (!(event.target.className === 'fas fa-pen pen edit-icon align-items')) {
+  if (!event.target.className === 'fas fa-pen pen edit-icon align-items') {
     return;
   }
   var editEntryId = parseInt(event.target.closest('li').getAttribute('data-entry-id'));
@@ -139,6 +143,7 @@ $entryView.addEventListener('click', function (event) {
       $photoUrl.value = data.entries[i].photoUrl;
       $notes.value = data.entries[i].notes;
       $image.setAttribute('src', $photoUrl.value);
+      $deleteButton.className = 'delete-button';
     }
     swapViews('entry-form');
   }
@@ -153,4 +158,35 @@ $newButton.addEventListener('click', function (event) {
 
 $entriesAnchor.addEventListener('click', function (event) {
   swapViews('entries');
+});
+
+$deleteButton.addEventListener('click', function (event) {
+  if (event.target.matches('button[type="button"]')) {
+    $modalPopUp.className = 'modal-popup show-modal';
+  } else {
+    $modalPopUp.className = 'modal-popup hidden';
+  }
+});
+
+$cancelButton.addEventListener('click', function (event) {
+  if (event.target.matches('.cancel-button')) {
+    $modalPopUp.className = 'modal-popup hidden';
+  } else {
+    $modalPopUp.className = 'modal-popup show-modal';
+  }
+});
+
+$confirmButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  swapViews('entries');
+  $modalPopUp.className = 'modal-popup hidden';
+
+  var deleteEntry = document.querySelector('[data-entry-id=' + '"' + data.editing + '"' + ']');
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing) {
+      data.entries.splice(i, 1);
+    }
+  }
+  deleteEntry.remove(deleteEntry);
+  $entryForm.reset();
 });
